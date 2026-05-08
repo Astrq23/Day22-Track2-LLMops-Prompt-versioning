@@ -1,0 +1,155 @@
+Machine Learning Foundations
+Question: What are the three main types of machine learning?
+Answer: The three main types of machine learning are supervised learning, unsupervised learning, and reinforcement learning.
+
+Question: What is overfitting in machine learning?
+Answer: Overfitting occurs when a model learns the training data too well, including noise, leading to poor generalization on new data.
+
+Question: Explain the bias-variance tradeoff.
+Answer: High bias means underfitting; high variance means overfitting. The optimal model balances both to minimize total error.
+
+Question: How does regularization prevent overfitting?
+Answer: L1 and L2 regularization add penalty terms to the loss function to discourage overly complex models.
+
+Question: What is cross-validation?
+Answer: Cross-validation splits data into multiple folds to estimate model performance more reliably.
+
+Question: What is backpropagation?
+Answer: Backpropagation computes gradients of the loss with respect to each weight by applying the chain rule of calculus.
+
+Question: What are Convolutional Neural Networks primarily used for?
+Answer: CNNs are specialized for processing grid-like data such as images.
+
+Question: How do LSTM networks address the vanishing gradient problem?
+Answer: LSTMs use gating mechanisms that control information flow through the network.
+
+Question: What activation functions are commonly used in neural networks?
+Answer: Common activation functions include ReLU, sigmoid, and tanh.
+
+Question: What is the role of pooling layers in CNNs?
+Answer: Pooling layers reduce spatial dimensions, decreasing computational complexity while retaining important features.
+
+Natural Language Processing
+Question: What is the transformer architecture?
+Answer: The transformer uses self-attention mechanisms and processes entire sequences in parallel, introduced in 'Attention Is All You Need' (2017).
+
+Question: What are word embeddings?
+Answer: Word embeddings represent words as dense vectors where semantically similar words are geometrically close.
+
+Question: What is transfer learning in NLP?
+Answer: Pre-training large models on massive corpora then fine-tuning on downstream tasks.
+
+Question: How does BERT handle language understanding?
+Answer: BERT uses bidirectional transformer training with masked language modeling and next sentence prediction.
+
+Question: What is self-attention in transformers?
+Answer: Self-attention allows models to weigh the importance of different words relative to each other in a sequence.
+
+Question: What is GPT and how is it trained?
+Answer: GPT uses autoregressive training to predict the next token given previous tokens, trained on massive text datasets.
+
+Question: What is instruction tuning?
+Answer: Fine-tuning pre-trained LLMs on instruction-following datasets to improve alignment with human intent.
+
+Question: What is RLHF?
+Answer: Reinforcement Learning from Human Feedback uses human preferences to align LLMs to be helpful, harmless, and honest.
+
+Question: What is chain-of-thought prompting?
+Answer: Chain-of-thought prompting encourages LLMs to show reasoning step by step, improving performance on complex tasks.
+
+Question: What is the context length of GPT-4?
+Answer: GPT-4 supports up to 128K tokens of context.
+
+Retrieval-Augmented Generation and Vector Search
+Question: What is Retrieval-Augmented Generation?
+Answer: RAG combines generative LLMs with retrieval from external knowledge bases to produce grounded, up-to-date answers.
+
+Question: What are the main components of a RAG pipeline?
+Answer: A retriever that searches a document store and a generator (LLM) that produces answers from the query and retrieved passages.
+
+Question: What is dense retrieval?
+Answer: Dense retrieval uses neural embeddings to encode queries and documents, determining relevance by cosine similarity.
+
+Question: Why is chunking strategy important in RAG?
+Answer: Chunking affects retrieval precision and context window fit; options include fixed-size, semantic, and hierarchical chunking.
+
+Question: What advanced RAG techniques exist beyond basic retrieval?
+Answer: Re-ranking, query expansion, HyDE, and iterative retrieval for multi-hop questions.
+
+Question: What are vector databases used for?
+Answer: Storing and querying high-dimensional vector embeddings for fast similarity search.
+
+Question: What is FAISS?
+Answer: FAISS is a library for efficient similarity search supporting exact and approximate nearest neighbor algorithms.
+
+Question: How do text embeddings capture semantic meaning?
+Answer: Text embeddings convert text into numerical vectors where semantically similar texts produce geometrically close vectors.
+
+Question: What is HNSW?
+Answer: HNSW builds a hierarchical graph for logarithmic-complexity approximate nearest neighbor search.
+
+Question: What is hybrid search in vector databases?
+Answer: Hybrid search combines dense vector search with sparse keyword search (BM25) using Reciprocal Rank Fusion.
+
+LangChain and LangSmith
+Question: What is LangChain?
+Answer: LangChain is an open-source framework for building LLM applications with abstractions for chains, agents, and data connections.
+
+Question: What is LangChain Expression Language (LCEL)?
+Answer: LCEL is a declarative way to compose chains using the pipe operator, supporting streaming, async, and batching.
+
+Question: What is LangGraph?
+Answer: LangGraph extends LangChain for stateful multi-actor applications as directed graphs, supporting cycles.
+
+Question: What memory types does LangChain support?
+Answer: ConversationBufferMemory, ConversationSummaryMemory, ConversationWindowMemory, and vector store memory.
+
+Question: What are LangChain retrievers?
+Answer: Retrievers fetch relevant documents from a data source given a query, supporting vector stores and BM25.
+
+Question: What is LangSmith?
+Answer: LangSmith is a platform for debugging, testing, evaluating, and monitoring LLM applications through automatic tracing.
+
+Question: What information do LangSmith traces capture?
+Answer: Inputs, outputs, latency, token usage, and errors for every component in a chain.
+
+Question: What is the LangSmith Prompt Hub?
+Answer: A repository for storing, versioning, and sharing prompt templates, supporting A/B testing and rollback.
+
+Question: How does LangSmith help monitor production LLM applications?
+Answer: LangSmith provides latency percentiles, error rates, token costs, and feedback annotations.
+
+Question: What are LangSmith datasets used for?
+Answer: Systematic evaluation using example inputs and expected outputs to compare model versions or prompt changes.
+
+RAGAS and Evaluation
+Question: What is RAGAS?
+Answer: RAGAS is an open-source framework for evaluating RAG pipelines using LLM-based reference-free metrics.
+
+Question: How does RAGAS compute faithfulness?
+Answer: By extracting claims from the answer and checking whether each claim can be inferred from the retrieved context.
+
+Question: What is answer relevancy in RAGAS?
+Answer: Measures how well the answer addresses the original question by generating synthetic questions from the answer.
+
+Question: What is context recall in RAGAS?
+Answer: Measures how well the retrieved context covers the information needed, evaluated against a ground truth reference.
+
+Question: What inputs does RAGAS evaluation require?
+Answer: User queries, generated answers, retrieved contexts (list of passages), and optionally reference answers.
+
+Guardrails AI and Safety
+Question: What is Guardrails AI?
+Answer: An open-source framework for adding validation and safety checks to LLM outputs with configurable on-fail actions.
+
+Question: What is PII and why is it important to detect in LLM responses?
+Answer: PII is Personally Identifiable Information; exposing it can violate GDPR and HIPAA privacy regulations.
+
+Question: What does structured output validation ensure?
+Answer: That LLM responses conform to expected schemas such as JSON, detecting and fixing invalid formats.
+
+Question: What is Constitutional AI?
+Answer: A technique where a model is given principles to follow and uses self-critique to improve its responses.
+
+Question: What are common AI safety concerns with LLMs?
+Answer: Hallucination, toxicity, bias, PII leakage, and jailbreaking attacks.

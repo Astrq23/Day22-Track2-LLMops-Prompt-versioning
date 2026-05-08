@@ -14,11 +14,11 @@ pip install -r requirements.txt
 ```
 langchain>=0.3.0
 langchain-core>=0.3.0
-langchain-openai>=0.3.0
+langchain-ollama>=0.2.0
 langchain-community>=0.3.0
 langchain-text-splitters>=0.3.0
 langsmith>=0.2.0
-openai>=1.0.0
+ollama>=0.4.0
 faiss-cpu>=1.7.0
 ragas>=0.4.0
 guardrails-ai>=0.5.0
@@ -33,11 +33,11 @@ numpy>=1.25.0
 | Package | Used For |
 |---------|---------|
 | `langchain` | Core LLM framework |
-| `langchain-openai` | ChatOpenAI, OpenAIEmbeddings |
+| `langchain-ollama` | ChatOllama, OllamaEmbeddings |
 | `langchain-community` | FAISS vectorstore integration |
 | `langchain-text-splitters` | RecursiveCharacterTextSplitter |
 | `langsmith` | LangSmith tracing, Prompt Hub client |
-| `openai` | Direct OpenAI API calls |
+| `ollama` | Ollama local model runtime client |
 | `faiss-cpu` | Similarity search index |
 | `ragas` | RAG evaluation metrics |
 | `guardrails-ai` | Output validation framework |
@@ -59,8 +59,8 @@ numpy>=1.25.0
 - `Guard.validate(text)` is the main entry point
 
 ### LangChain 0.3.x
-- Use `ChatOpenAI(api_key=..., base_url=..., model=...)` for custom endpoints
-- Use `OpenAIEmbeddings(api_key=..., base_url=..., model=...)` for custom embedding endpoints
+- Use `ChatOllama(model=..., base_url=...)` for local Ollama chat models
+- Use `OllamaEmbeddings(model=..., base_url=...)` for local Ollama embeddings
 
 ## Environment Variables
 
@@ -80,7 +80,7 @@ Expected output:
 ```
 ✅ Config loaded successfully
    LangSmith project : your-project-name
-   OpenAI endpoint   : https://...
-   Default LLM model : gpt-5.4-mini
-   Embedding model   : text-embedding-3-small
+   Ollama endpoint   : http://localhost:11434
+   Default LLM model : llama3.1:8b
+   Embedding model   : nomic-embed-text
 ```

@@ -21,7 +21,8 @@ By the end of this lab you will be able to:
 ## Prerequisites
 
 - Python 3.10+
-- Access to an OpenAI-compatible API endpoint (provided via `.env`)
+- Ollama installed and running locally
+- Required Ollama models pulled (configured in `.env`)
 - LangSmith account (API key provided)
 
 ---
